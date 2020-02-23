@@ -17,10 +17,12 @@ def veri_al():
     liste = cursor.fetchall()
     print("Kitaplık Bilgileri...........")
     time.sleep(1)
-    print("********************************")
+    print("********************************\n")
+    a=0
     for i in liste:
         t=0
         for x in i:
+            a=1
             if(t==0):
                 print("Kitap Adı : {}".format(x))
             elif(t==1):
@@ -32,10 +34,13 @@ def veri_al():
             elif(t==4):
                 print("Stok : {}".format(x))
                 t=0
-                print("********************************")
+                print("\n********************************")
                 continue
             t+=1
             time.sleep(0.5)
+    if(a==0):
+        print("Stokta Kitap Bulunmuyor.\n")
+        print("********************************")
     
 
 def veri_al3(isim):
