@@ -59,7 +59,7 @@ def kitap_sat(kitap,k):
                 print("{} tükendi.".format(kitap))
         else:
             print("Stokta o kadar kitap yok.")
-    except:
+    except  UnboundLocalError:
         print("Kitap Bilgileri Sistemde Kayıtlı Değildir.\nÖnce Kitap Bilgilerini Eklemeniz Gerekmektedir.")
     
 def gelen_kitap(kitap,k):
@@ -71,7 +71,7 @@ def gelen_kitap(kitap,k):
                 a=x
         cursor.execute("Update kitaplık set Stok = ? where İsim = ?",(a+k,kitap))
         con.commit()
-    except:
+    except  UnboundLocalError:
         print("Kitap Bilgileri Sistemde Kayıtlı Değildir.\nÖnce Kitap Bilgilerini Eklemeniz Gerekmektedir.")
     
     
