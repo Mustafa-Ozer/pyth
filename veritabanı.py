@@ -9,8 +9,19 @@ def tablo_olustur():
     con.commit()
    
 def veri_ekle(isim,yazar,yayınevi,sayfa_sayısı,stok):
-    cursor.execute("INSERT INTO kitaplık Values(?,?,?,?,?)",(isim,yazar,yayınevi,sayfa_sayısı,stok))
-    con.commit()
+    cursor.execute("Select * From kitaplık where İsim = ?",(isim,))
+    liste = cursor.fetchall()
+    if(liste == []):
+        cursor.execute("INSERT INTO kitaplık Values(?,?,?,?,?)",(isim,yazar,yayınevi,sayfa_sayısı,stok))
+        con.commit()
+        time.sleep(0.5)
+        print("Kitap Eklendi.")
+    else:
+        for i in liste:
+            for x in i:
+                a=x
+        cursor.execute("Update kitaplık set Stok = ? where İsim = ?",(a+stok,isim))
+        con.commit()
 
 def veri_al():
     cursor.execute("Select * From kitaplık"),
