@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 import requests
 
 try:
-    def dovizcek(usd,euro,gram,sterlin):
+    def dovizcek():
         url = "https://www.doviz.com/"
         response = requests.get(url)
         html_ic = response.content
@@ -34,7 +34,7 @@ try:
     gram = list()
     sterlin = list()
     a=0
-    for i,j in dovizcek(usd,euro,gram,sterlin):
+    for i,j in dovizcek():
         if(a==0):
             usd.append(i)
             usd.append(j)
@@ -87,7 +87,7 @@ except:
 def Pencere():
     app = QtWidgets.QApplication(sys.argv)
     pencere = QtWidgets.QWidget()
-    pencere.setWindowTitle("PyQt5.Doviz")
+    pencere.setWindowTitle("Doviz")
     buton = QtWidgets.QPushButton(pencere)
     buton.setText("Hesapla")
     buton2 = QtWidgets.QPushButton(pencere)
