@@ -113,8 +113,11 @@ try:
     tarih=("{} / {} / {}".format(su_an.day,su_an.month,su_an.year))
     tablo_olustur()
     verileri_kaydet(tarih,saat,deger2,deger3,deger,deger4)
-    x = input("Tarih gir(G / A / YYYY) : ")
-    veri_al(x)
+    try:
+        x = input("Tarih gir(G / A / YYYY) : ")
+        veri_al(x)
+    except:
+        pass
 except:
     a="nc"
 
