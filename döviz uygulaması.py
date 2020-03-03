@@ -174,7 +174,6 @@ def Pencere():
     h_box.addLayout(v_box)
     h_box.addStretch()
     etp = QtWidgets.QLabel(pencere)
-    v_box.addWidget(etp)
     def hesap():
         pbirim = yazi_alani.text()
         pbirim = pbirim.upper()
