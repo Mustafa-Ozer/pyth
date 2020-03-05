@@ -174,4 +174,3 @@ def Pencere():
     sys.exit(app.exec_())
 
 Pencere()
-con.close()
