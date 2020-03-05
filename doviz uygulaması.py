@@ -163,7 +163,7 @@ def Pencere():
             v_box.addWidget(etp)
 
     def kapat():
-        sys.exit(app.exec_())
+        QtWidgets.qApp.quit()
 
     buton.clicked.connect(lambda : hesap(gram.isChecked(),usd.isChecked,euro.isChecked(),ster.isChecked()))
     buton2.clicked.connect(kapat)
